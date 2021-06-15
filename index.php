@@ -32,27 +32,20 @@
                                     <input type="submit" name="submit" value="Submit" class="button">
                             </form>
 
-                                <?php
-                                    $username = $password = "";
-                                    // Used for connect to the database called "sito"
-                                    $conn = mysqli_connect("localhost","root","","sito");
+                            <?php
+                                $username = $password = "";
+                                // Used for connect to the database called "sito"
+                                $conn = mysqli_connect("localhost","root","","sito");
 
-                                    // When submit is pressed, it assign to username and password variables what you have written in form inputs
-                                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                        $username = $_POST["user"];
-                                        $password = $_POST["pass"];
-                                    }
-
-                                    // If there is an error connecting to database, exit 
-                                    if (mysqli_connect_errno()) {
-                                        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                                        exit();
-                                    }
+                                // When submit is pressed, it assigne to username and password variables what you have written in form inputs
+                                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                    $username = $_POST["user"];
+                                    $password = $_POST["pass"];
 
                                     // If forum inputs aren't empty
                                     if (!empty($username) && !empty($password)) {
                                         // Find user and password from databse 'users' (variable) 
-                                        $users = "SELECT * FROM users WHERE `Utente` = '$username' and `Password` = '$password'";
+                                        $users = "SELECT * FROM users WHERE Utente = '$username' and Password = '$password'";
                                         // Perform the query, WHERE: database named 'sito' (line 30), WHAT TO DO: line 47
                                         $result = mysqli_query($conn, $users);
 
@@ -62,8 +55,18 @@
                                         }else {
                                             echo "<h2>Username or password incorrect</h2>";
                                         }
+                                        mysqli_close($conn);
+                                    }else {
+                                        echo "<h2>Don't leave blank input</h2>";
                                     }
-                                ?>
+                                }
+
+                                // If there is an error connecting to database, exit 
+                                if (mysqli_connect_errno()) {
+                                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                                    exit();
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>

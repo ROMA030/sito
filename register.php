@@ -11,8 +11,8 @@
     </head>
 
     <body>
-    <header class="header clearfix">
-            <a class="header__logo">Logo</a>
+        <header class="header clearfix">
+                <a class="header__logo">Logo</a>
         </header>
 
         <section class="register__cover">

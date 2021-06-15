@@ -50,7 +50,7 @@
                         echo "<td>". $row['Utente']. "</td>";
                         echo "<td>". $row['Password']. "</td>";
                         echo "<td>". $row['DataNascita']. "</td>";
-                        echo "<td><a id='table__hype' href=\"delete.php?user=".$row['Utente']."\">Delete</a></td>";
+                        echo "<td><a id='table__hype' href=\"delete.php?user=".$row['Utente']."\">Delete</a> <a id='table__hype'>". ' | ' ."</a> <a id='table__hype' href=\"modify.php?user=".$row['Utente']."\">Modify</a> </td>";
                         echo "</tr>";
                     }
                 }

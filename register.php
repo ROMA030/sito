@@ -11,8 +11,8 @@
     </head>
 
     <body>
-    <header class="header clearfix">
-            <a class="header__logo">Logo</a>
+        <header class="header clearfix">
+                <a class="header__logo">Logo</a>
         </header>
 
         <section class="register__cover">
@@ -60,11 +60,13 @@
 
                                         // If number of rows in result variable is major than 0
                                         if (mysqli_num_rows($checkResult) > 0) {
-                                            echo "<h2>Username already exists</h2>";
+                                            echo "<h2 class='notification'>Username already exists</h2>";
                                         }else {
                                             $users = "INSERT INTO users(Utente, Password, Nome, Cognome, DataNascita) VALUES ('$username', '$password', '$name', '$surname', '$birthday')";
                                             $result = mysqli_query($conn, $users);
                                             echo "<h2 class='notification'>Successfully registered</h2>";
+                                            header("location: table.php");
+                                            exit();
                                         }
                                         mysqli_close($conn);
                                     }else {

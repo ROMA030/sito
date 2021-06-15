@@ -36,7 +36,7 @@
 
     <body>
         <header class="header clearfix">
-            <h1>Registrazione</h1>
+                <a class="header__logo">Logo</a>
         </header>
 
         <div>

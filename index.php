@@ -58,13 +58,16 @@
 
                                         // If number of rows in result variable is major than 0
                                         if (mysqli_num_rows($result) > 0) {
-                                            echo "<h2>Successfully access</h2>";
+                                            echo "<h2 class='notification'>Successfully access</h2>";
+
+                                            header("location: table.php");
+                                            exit();
                                         }else {
-                                            echo "<h2>Username or password incorrect</h2>";
+                                            echo "<h2 class='notification'>Username or password incorrect</h2>";
                                         }
                                         mysqli_close($conn);
                                     }else {
-                                        echo "<h2>Don't leave blank input</h2>";
+                                        echo "<h2 class='notification'>Don't leave blank input</h2>";
                                     }
                                 }
 

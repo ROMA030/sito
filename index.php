@@ -29,7 +29,8 @@
                             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                                     <input placeholder="Username" name="user" type="username">
                                     <input placeholder="Password" name="pass" type="password"> <br><br>
-                                    <input type="submit" name="submit" value="Submit" class="button">
+                                    <input type="submit" name="submit" value="Login" class="button">
+                                    <button href="register.php" type="button" class="button">Register</button>
                             </form>
 
                                 <?php

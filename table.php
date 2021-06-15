@@ -45,6 +45,12 @@
                 // Used for connect to the database called "sito"
                 $conn = mysqli_connect("localhost","root","","sito");
                 
+                // If there is an error connecting to database, exit 
+                if (mysqli_connect_errno()) {
+                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                    exit();
+                }
+
                 $list = "SELECT * FROM users";
                 $result = mysqli_query($conn, $list);
 
@@ -55,16 +61,18 @@
                 echo "<th>Username</th> ";
                 echo "<th>Password</th>";
                 echo "<th>Birthday</th>";
+                echo "<th>Actions</th>";
                 echo "</tr>";
                  
                 if (mysqli_num_rows($result) > 0) {
                     while($row = $result->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<td>". $row['Nome']. "</th>";
-                        echo "<td>". $row['Cognome']. "</th>";
-                        echo "<td>". $row['Utente']. "</th>";
-                        echo "<td>". $row['Password']. "</th>";
-                        echo "<td>". $row['DataNascita']. "</th>";
+                        echo "<td>". $row['Nome']. "</td>";
+                        echo "<td>". $row['Cognome']. "</td>";
+                        echo "<td>". $row['Utente']. "</td>";
+                        echo "<td>". $row['Password']. "</td>";
+                        echo "<td>". $row['DataNascita']. "</td>";
+                        echo "<td><a href=\"delete.php?user=".$row['Utente']."\">Delete</a></td>";
                         echo "</tr>";
                     }
                 }

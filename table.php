@@ -8,35 +8,13 @@
         <link rel="stylesheet" href="style.css">
         </link>
 
-        <style>
-            table {
-            width:100%;
-            }
-            table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            }
-            th, td {
-            padding: 15px;
-            text-align: left;
-            }
-            #t01 tr:nth-child(even) {
-            background-color: #eee;
-            }
-            #t01 tr:nth-child(odd) {
-            background-color: #fff;
-            }
-            #t01 th {
-            background-color: black;
-            color: white;
-            }
-        </style>
         
     </head>
 
     <body>
         <header class="header clearfix">
                 <a class="header__logo">Logo</a>
+                <a href=""></a>
         </header>
 
         <div>
@@ -72,7 +50,7 @@
                         echo "<td>". $row['Utente']. "</td>";
                         echo "<td>". $row['Password']. "</td>";
                         echo "<td>". $row['DataNascita']. "</td>";
-                        echo "<td><a href=\"delete.php?user=".$row['Utente']."\">Delete</a></td>";
+                        echo "<td><a id='table__hype' href=\"delete.php?user=".$row['Utente']."\">Delete</a></td>";
                         echo "</tr>";
                     }
                 }

@@ -3,6 +3,16 @@ body{background: #eee; font-family: Arial;}
 
 .header{background: #333; height: 10%;}
 .header__logo{color: #fff; float: left; padding: 30px; font-size: 30px; display: block;}
+.header__back{
+  background-color: #3d78e6;
+  border: none;
+  color: white;
+  float: right; 
+  font-size: 30px;
+  margin: 18px 10px;
+  cursor: pointer;
+  display: block;
+}
 
 .cover {height: 90%; 
   background-image: url("https://xeos.it/wp-content/uploads/2015/12/2.jpg"); 

@@ -56,7 +56,7 @@
                         echo "<td>". $row['Utente']. "</td>";
                         echo "<td>". $row['Password']. "</td>";
                         echo "<td>". $row['DataNascita']. "</td>";
-                        echo "<td><a href=\"delete.php?user=".$row['Utente']."\">Delete</a></td>";
+                        echo "<td><a id='table__hype' href=\"delete.php?user=".$row['Utente']."\">Delete</a></td>";
                         echo "</tr>";
                     }
                 }
@@ -86,7 +86,7 @@
                             echo "<td>". $row['Utente']. "</td>";
                             echo "<td>". $row['Password']. "</td>";
                             echo "<td>". $row['DataNascita']. "</td>";
-                            echo "<td><a href=\"delete.php?user=".$row['Utente']."\">Delete</a></td>";
+                            echo "<td><a id='table__hype' href=\"delete.php?user=".$row['Utente']."\">Delete</a></td>";
                             echo "</tr>";
                         }
 

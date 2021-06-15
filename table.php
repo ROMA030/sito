@@ -62,6 +62,7 @@
                 }
                 echo "</table>";
                 
+                $username = "";
                 if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     $username = $_GET["user"];
 

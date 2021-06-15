@@ -12,7 +12,9 @@
 
     <body>
         <header class="header clearfix">
-            <a class="header__logo">Logo</a>
+                <a class="header__logo">Logo</a>
+                <a href=""></a>
+                <button  type="button" class="header__back" ><a href="index.php">Back</a></button>
         </header>
 
         <div>

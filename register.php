@@ -17,11 +17,11 @@
 
         <div>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                    <input name="name" type="text">
-                    <input name="surname" type="text">
-                    <input name="birthday" type="date">
-                    <input name="user" type="username">
-                    <input name="pass" type="password">
+                    <input name="name" placeholder="Name" type="text">
+                    <input name="surname" placeholder="Surname" type="text">
+                    <input name="birthday" placeholder="Birthday" type="date">
+                    <input name="user" placeholder="User" type="username">
+                    <input name="pass" placeholder="Password" type="password">
                     <input type="submit" name="submit" value="Submit">
             </form>
 

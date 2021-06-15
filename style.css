@@ -1,10 +1,10 @@
 html,body{height: 100%}
 body{background: #eee;}
 
-.header{background: #333; height: 60px;}
-.header__logo{color: #fff; float: left; padding: 10px; font-size: 30px; display: block;}
+.header{background: #333; height: 10%;}
+.header__logo{color: #fff; float: left; padding: 30px; font-size: 30px; display: block;}
 
-.cover{height: 70%; 
+.cover{height: 90%; 
   background-image: url("https://xeos.it/wp-content/uploads/2015/12/2.jpg"); 
   background-size: cover;
   -o-background-size: cover;
@@ -19,20 +19,36 @@ body{background: #eee;}
   height: 100%;
   position: absolute;
   z-index: 0;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .cover__caption{
   display: table;
   height: 100%;
   width: 100%;
+  position: relative;
+  z-index: 1;
 }
   
+.button {
+  background-color: #3d78e6;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 
 .cover__caption__copy{
   display: table-cell;
   vertical-align: middle;
   text-align: center;
+  color: #fff;
+  font-size: 50px;
 }
   
 

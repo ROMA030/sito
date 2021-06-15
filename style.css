@@ -4,8 +4,17 @@ body{background: #eee;}
 .header{background: #333; height: 10%;}
 .header__logo{color: #fff; float: left; padding: 30px; font-size: 30px; display: block;}
 
-.cover{height: 90%; 
+.cover {height: 90%; 
   background-image: url("https://xeos.it/wp-content/uploads/2015/12/2.jpg"); 
+  background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  background-position: center center; 
+  position: relative; 
+}
+
+.register__cover {height: 90%; 
+  background-image: url("informatica per Morpurgo 1920.png"); 
   background-size: cover;
   -o-background-size: cover;
   -moz-background-size: cover;
@@ -43,16 +52,24 @@ body{background: #eee;}
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.notification {
+  font-size: 20px;
+}
+  
+  
+
 .cover__caption__copy{
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   color: #fff;
-  font-size: 50px;
+  font-size: 40px;
 }
   
-
-
 
 .clearfix:after {
     visibility: hidden;

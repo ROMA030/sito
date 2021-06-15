@@ -30,7 +30,7 @@
                                     <input placeholder="Username" name="user" type="username">
                                     <input placeholder="Password" name="pass" type="password"> <br><br>
                                     <input type="submit" name="submit" value="Login" class="button">
-                                    <button href="register.php" type="button" class="button">Register</button>
+                                    <button  type="button" class="button"><a href="register.php">Register</a></button>
                             </form>
 
                             <?php

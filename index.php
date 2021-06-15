@@ -37,6 +37,12 @@
                                 // Used for connect to the database called "sito"
                                 $conn = mysqli_connect("localhost","root","","sito");
 
+                                 // If there is an error connecting to database, exit 
+                                if (mysqli_connect_errno()) {
+                                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                                    exit();
+                                }
+
                                 // When submit is pressed, it assigne to username and password variables what you have written in form inputs
                                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     $username = $_POST["user"];
@@ -61,11 +67,7 @@
                                     }
                                 }
 
-                                // If there is an error connecting to database, exit 
-                                if (mysqli_connect_errno()) {
-                                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                                    exit();
-                                }
+                               
                             ?>
                         </div>
                     </div>

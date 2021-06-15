@@ -59,5 +59,7 @@
                 mysqli_close($conn);
             ?>
         </div>
+        
+        <input type="text">
     </body>
 </html>

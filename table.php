@@ -19,9 +19,6 @@
             font-family: "Arial";
         }
 
-        body {
-            background: #eaeaea;
-        }
 
         .wrapper .header {
             background: #29a5d8;
@@ -55,7 +52,7 @@
         }
 
         ::placeholder {
-            color: #e5edfa;
+            color: #121212;
         }
 
         .wrapper .search_box input:focus {
@@ -147,7 +144,7 @@
 
         <div>
 
-            <input type="text" id="search_input" placeholder="Fliter Table Using Usernames">
+            <input type="text" id="search_input" placeholder="Search by username">
 
             <div class="table_wrap">
                 <div class="table_header">
@@ -209,7 +206,7 @@
                         echo    '<div class="password">';
                         echo        '<span class="open">'. $row['Password']. '</span>';
                         echo    '</div>';
-                        echo    '<div class="bithday">';
+                        echo    '<div class="birthday">';
                         echo        '<span class="open">'. $row['DataNascita']. '</span>';
                         echo    '</div>';
                         echo    '<div class="actions">';

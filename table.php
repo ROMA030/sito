@@ -79,10 +79,10 @@
                         echo    '<div class="username">';
                         echo        '<span>'. $row['Utente']. '</span>';
                         echo    '</div>';
-                        echo    '<div class="password">';
+                        echo    '<div class="password" style="color:black>';
                         echo        '<span class="open">'. $row['Password']. '</span>';
                         echo    '</div>';
-                        echo    '<div class="birthday">';
+                        echo    '<div class="birthday" style="color:black>';
                         echo        '<span class="open">'. $row['DataNascita']. '</span>';
                         echo    '</div>';
                         echo    '<div class="actions">';

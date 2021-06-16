@@ -21,6 +21,7 @@ async function loadFile(file) {
     
     let text = await file.text();
     let csvData1 = text.split("\n");
+    let csvData = [];
     let csvNames = [];
     
     let respRate = [];
@@ -32,6 +33,8 @@ async function loadFile(file) {
     for (var j = 0; j < csvData1.length; j++) {
         var arr1 = csvData1[j].split(",");
         columnCount = arr1.length;
+        csvData = csvData.concat(arr1);
+
         if(j > 0)
         {
             respRate.push(arr1[5]);
@@ -73,15 +76,22 @@ function disegnaGrafico(dataArr, div_id, rifValue)
                 text: div_id
             },
             xAxis: {
-                type: 'datetime'
+                
+                type: 'datetime',
+                plotBands: [{
+                color: 'orange', // Color value
+                from: 60000 * 2, // Start of the plot band
+                to: 60000 * 3 // End of the plot band
+            }]
             },
             series: [{
                 name: 'John',
                 pointStart: 0,
                 pointInterval: 1000,
                 data: dataArr,
+                zoneAxis: 'x',
                 zones: [{  
-                                value: rifValue,  
+                                value: 60000 * 2,  
                                 color: '#7cb5ec'  
                             }, {
                                 color: '#f7a35c'
@@ -115,7 +125,7 @@ function disegnaGrafico(dataArr, div_id, rifValue)
     }
 
     console.log(csvData);
-
+*/
     
     let numberOfRows = csvData.length / columnCount;
 
@@ -147,7 +157,7 @@ function disegnaGrafico(dataArr, div_id, rifValue)
             }
         }
     }
-    body.appendChild(tbl);*/
+    body.appendChild(tbl);
 
     
 }

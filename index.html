@@ -10,8 +10,8 @@
 
 <input type="file" onchange="loadFile(this.files[0])">
 
-<div id="container1" style="width:100%;"></div>
-<div id="container2" style="width:100%;"></div>
+<div id="RespirationRate" style="width:100%;"></div>
+<div id="HeartRate" style="width:100%;"></div>
 
 </body>
 
@@ -50,6 +50,7 @@ async function loadFile(file) {
         respRate = respRate.map(function (x) { 
     return parseInt(x, 10); 
     });
+
         heartRate = heartRate.map(function (x) { 
     return parseInt(x, 10); 
     });
@@ -62,14 +63,14 @@ async function loadFile(file) {
 
     
     
-function disegnaGrafico(dataArr, div_id)
+function disegnaGrafico(dataArr, div_id, rifValue)
 {
     const chart = Highcharts.chart(div_id, {
             chart: {
                 type: 'line'
             },
             title: {
-                text: 'Sto cazzo'
+                text: div_id
             },
             xAxis: {
                 type: 'datetime'
@@ -78,14 +79,24 @@ function disegnaGrafico(dataArr, div_id)
                 name: 'John',
                 pointStart: 0,
                 pointInterval: 1000,
-                data: dataArr
-            }]
+                data: dataArr,
+                zones: [{  
+                                value: rifValue,  
+                                color: '#7cb5ec'  
+                            }, {
+                                color: '#f7a35c'
+                            }]  },
+                ],
+            
         });
-}
     
 
-   disegnaGrafico(respRate, "container1");
-   disegnaGrafico(heartRate, "container2");
+}
+    let rifValueHeart = 120;
+    let rifValueResp = 130;
+
+    disegnaGrafico(respRate, "RespirationRate", rifValueResp);
+    disegnaGrafico(heartRate, "HeartRate", rifValueHeart);
    
    
 

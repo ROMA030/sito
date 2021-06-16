@@ -15,7 +15,7 @@
     <body>
         <header class="header clearfix">
                 <a class="header__logo">Logo</a>
-                <a href="index.php" class="header__back1">Back</a>
+                <a href="index.php" class="header__back1">Log out</a>
         </header>
 
         <div>

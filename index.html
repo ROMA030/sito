@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p id="demo"></p>
+<input type="file" onchange="loadFile(this.files[0])">
+
+<script>
+async function loadFile(file) {
+    let text = await file.text();
+    let csvData1 = text.split("\n");
+    let csvData = [];
+    let columnCount;
+    
+    
+    for (var j = 0; j < csvData1.length; j++)
+    {
+        var arr1 = csvData1[j].split(",");
+        columnCount = arr1.length;
+        csvData = csvData.concat(arr1);
+    }
+
+    console.log(csvData);
+
+    
+    let numberOfRows = csvData.length / columnCount;
+
+    //body reference 
+    var body = document.getElementsByTagName("body")[0];
+    
+    // create elements <table> and a <tbody>
+    var tbl = document.createElement("table");
+    var tblBody = document.createElement("tbody");
+    let temp = 0;
+
+    for (var j = 0; j < numberOfRows; j++) {
+        // table row creation
+        var row = tbl.insertRow();
+
+        for (var i = 0; i < columnCount; i++) {
+            if(i == columnCount-1 && j == numberOfRows-1){
+                var td = row.insertCell();
+                td.appendChild(document.createTextNode(csvData[temp]));
+                temp++;
+                td.style.border = '1px solid black';
+                break;
+
+            } else {
+                var td = row.insertCell();
+                td.appendChild(document.createTextNode(csvData[temp]));
+                temp++;
+                td.style.border = '1px solid black';
+            }
+        }
+    }
+    body.appendChild(tbl);
+}
+</script>
+
+
+<script>
+
+</script>
+
+</body>
+</html>
+

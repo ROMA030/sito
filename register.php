@@ -13,7 +13,7 @@
     <body>
         <header class="header clearfix">
                 <a class="header__logo">Logo</a>
-                <button  type="button" class="header__back"><a href="index.php">Back</a></button>
+                <a href="index.php" class="header__back1">Back</a>
         </header>
 
         <section class="register__cover">

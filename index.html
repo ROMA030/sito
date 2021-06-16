@@ -2,17 +2,17 @@
 <html>
 <body>
 
-<head><script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="/js/highstock.js"></script>
-    <script src="/js/highmaps.js"></script>
+<head>
+    <script src="https://code.highcharts.com/highcharts.js"></script>  
 </head>
 <body>
 <p id="demo"></p>
 
-
-<div id="container" style="width:100%; height:400px;"></div>
-
 <input type="file" onchange="loadFile(this.files[0])">
+
+<div id="container1" style="width:100%;"></div>
+<div id="container2" style="width:100%;"></div>
+
 </body>
 
 
@@ -22,13 +22,10 @@ async function loadFile(file) {
     let text = await file.text();
     let csvData1 = text.split("\n");
     let csvNames = [];
-    let skinTemp = [];
+    
     let respRate = [];
     let heartRate = [];
-    let gainCH0 = [];
-    let gainCH1 = [];
-    let gainCH2 = [];
-    let gainCH3 = [];
+    
     let columnCount;
     
     
@@ -37,56 +34,62 @@ async function loadFile(file) {
         columnCount = arr1.length;
         if(j > 0)
         {
-            skinTemp.push(arr1[2]);
-            resp.respRate()
+            respRate.push(arr1[5]);
+            heartRate.push(arr1[6]);     
         }
+
         else
         {
             csvNames = arr1; 
         }
 
-        csvData = csvData.concat(arr1);
+        //csvData = csvData.concat(arr1);
     }
-    console.log(csvData);
+    
+  
+        respRate = respRate.map(function (x) { 
+    return parseInt(x, 10); 
+    });
+        heartRate = heartRate.map(function (x) { 
+    return parseInt(x, 10); 
+    });
+       
+
     /*csvData = csvData.map(function (x) { 
   return parseInt(x, 10); 
 });
-
+*/
 
     
-    Highcharts.setOptions({
-        chart: {
-            backgroundColor: {
-                linearGradient: [0, 0, 500, 500],
-                stops: [
-                    [0, 'rgb(255, 255, 255)'],
-                    [1, 'rgb(240, 240, 255)']
-                ]
+    
+function disegnaGrafico(dataArr, div_id)
+{
+    const chart = Highcharts.chart(div_id, {
+            chart: {
+                type: 'line'
             },
-            borderWidth: 2,
-            plotBackgroundColor: 'rgba(255, 255, 255, .9)',
-            plotShadow: true,
-            plotBorderWidth: 1
-        }
-    });
-
-    var chart1 = new Highcharts.Chart({
-        chart: {
-            renderTo: 'container',
-        },
-        xAxis: {
-            type: 'datetime'
-        },
-        series: [{
-            data: [1, 32, 42],
-            pointStart: Date.UTC(2010, 0, 1),
-            pointInterval: 1000 // one second
-        }]
-    });
+            title: {
+                text: 'Sto cazzo'
+            },
+            xAxis: {
+                type: 'datetime'
+            },
+            series: [{
+                name: 'John',
+                pointStart: 0,
+                pointInterval: 1000,
+                data: dataArr
+            }]
+        });
+}
     
+
+   disegnaGrafico(respRate, "container1");
+   disegnaGrafico(heartRate, "container2");
+   
    
 
-
+/*
     let text = await file.text();
     let csvData1 = text.split("\n");
     let csvData = [];

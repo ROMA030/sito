@@ -2,13 +2,91 @@
 <html>
 <body>
 
-<h2>JavaScript Arrays</h2>
-
+<head><script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="/js/highstock.js"></script>
+    <script src="/js/highmaps.js"></script>
+</head>
+<body>
 <p id="demo"></p>
+
+
+<div id="container" style="width:100%; height:400px;"></div>
+
 <input type="file" onchange="loadFile(this.files[0])">
+</body>
+
 
 <script>
 async function loadFile(file) {
+    
+    let text = await file.text();
+    let csvData1 = text.split("\n");
+    let csvNames = [];
+    let skinTemp = [];
+    let respRate = [];
+    let heartRate = [];
+    let gainCH0 = [];
+    let gainCH1 = [];
+    let gainCH2 = [];
+    let gainCH3 = [];
+    let columnCount;
+    
+    
+    for (var j = 0; j < csvData1.length; j++) {
+        var arr1 = csvData1[j].split(",");
+        columnCount = arr1.length;
+        if(j > 0)
+        {
+            skinTemp.push(arr1[2]);
+            resp.respRate()
+        }
+        else
+        {
+            csvNames = arr1; 
+        }
+
+        csvData = csvData.concat(arr1);
+    }
+    console.log(csvData);
+    /*csvData = csvData.map(function (x) { 
+  return parseInt(x, 10); 
+});
+
+
+    
+    Highcharts.setOptions({
+        chart: {
+            backgroundColor: {
+                linearGradient: [0, 0, 500, 500],
+                stops: [
+                    [0, 'rgb(255, 255, 255)'],
+                    [1, 'rgb(240, 240, 255)']
+                ]
+            },
+            borderWidth: 2,
+            plotBackgroundColor: 'rgba(255, 255, 255, .9)',
+            plotShadow: true,
+            plotBorderWidth: 1
+        }
+    });
+
+    var chart1 = new Highcharts.Chart({
+        chart: {
+            renderTo: 'container',
+        },
+        xAxis: {
+            type: 'datetime'
+        },
+        series: [{
+            data: [1, 32, 42],
+            pointStart: Date.UTC(2010, 0, 1),
+            pointInterval: 1000 // one second
+        }]
+    });
+    
+   
+
+
     let text = await file.text();
     let csvData1 = text.split("\n");
     let csvData = [];
@@ -55,14 +133,13 @@ async function loadFile(file) {
             }
         }
     }
-    body.appendChild(tbl);
+    body.appendChild(tbl);*/
+
+    
 }
 </script>
 
 
-<script>
-
-</script>
 
 </body>
 </html>

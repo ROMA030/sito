@@ -58,6 +58,7 @@
 .table_wrap ul li .item .username {
   width: 20%;
   padding: 0 15px;
+  
 }
 
 .table_wrap ul li .item .name span {
@@ -194,6 +195,11 @@ font-weight: bold;
 color: #3d78e6;
 }
 
+#table__hype1 {
+  font-weight: bold;
+  color: #f11f1f;
+}
+  
 
 .clearfix:after {
 visibility: hidden;

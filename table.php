@@ -86,7 +86,7 @@
                         echo        '<span class="open">'. $row['DataNascita']. '</span>';
                         echo    '</div>';
                         echo    '<div class="actions">';
-                        echo        "<a id='table__hype' href=\"delete.php?user=".$row['Utente']."\">Delete</a> <a id='table__hype'>". ' | ' ."</a> <a id='table__hype' href=\"modify.php?user=".$row['Utente']."\">Modify</a>";
+                        echo        "<a id='table__hype1' href=\"delete.php?user=".$row['Utente']."\">Delete</a> <a id='table__hype'>". ' | ' ."</a> <a id='table__hype' href=\"modify.php?user=".$row['Utente']."\">Modify</a>";
                         echo    '</div>';
                         echo     '</div>';
                         echo '</li>';

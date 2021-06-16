@@ -5,3 +5,14 @@ CREATE TABLE `users` (
     `Cognome` varchar(40),
     `DataNascita` varchar(255)
 )
+
+CREATE TABLE `acc` (
+    `Utente` varchar(255) NOT NULL,
+    `Sessione` int NOT NULL,
+    `timestamp` int(40),
+    `accX` int,
+    `accY` int,
+    `accZ` int,
+    `inizio` int,
+    `fine` int
+)
